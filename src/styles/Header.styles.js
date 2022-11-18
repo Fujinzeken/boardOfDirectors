@@ -102,7 +102,7 @@ export const NavMobile = styled.div`
     background-color:#102DB5;
     position:absolute;
     top:30px;
-    left:-35px;
+    left:-75px;
     gap:30px;
     padding:20px 50px;
     align-items:center;
