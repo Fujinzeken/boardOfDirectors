@@ -7,6 +7,7 @@ import {BrowserRouter as  Router,Route,Routes} from 'react-router-dom'
 import Details from './Details';
 import Footer from './components/Footer';
 
+
 const theme = {
   colors: {
     headers: '#ebfbff',

@@ -1,29 +1,61 @@
 import styled from 'styled-components'
 
 export const StyledDetails = styled.div`
-    background:#B0CEFF;
-    width:70%;
-    height:450px;
-    display:flex;
-    justify-content:center;
-    padding:50px;
-    position:relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
     
-    div{
-        display:flex;
-        background:#fff;
-       
-    }
+
+`
+
+export const DetailsModal = styled.div`
+    background-color:#B0CEFF;;
+    display:flex;
+    width:70%;
+    align-items:center;
+    justify-content:center;
+    height:80%;
+    position:relative;
 
    
 
+    &>div{
+        background-color: #fff;
+        width: 80%;
+        max-width:max-content;
+        display: flex;
+        height:75%;
+    }
+
+    @media(max-width:${({theme})=> theme.mobile}){
+       background-color:#fff;
+        overflow-y:scroll;
+       
+    &>div{
+        background-color: #fff;
+        width: 100%;
+        max-width:max-content ;
+        display: flex;
+        flex-direction:column;
+        height:100%;
+        align-items:center;
+    }
+    }
 `
 
 export const Column = styled.div`
     display:flex;
-    gap:20px;
+    gap:10px;
     align-items:flex-start;
     flex-direction:column;
+    background-color:#fff;
     border: ${(props)=> props.border};
     padding: ${(props)=> props.padding};
     
@@ -46,21 +78,60 @@ export const Column = styled.div`
         line-height: 28px;
     }
     &>p{
-        ${'' /* width:70%; */}
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
 
     }
     
+    
+    @media(max-width:${({theme})=> theme.mobile}){
+        align-items:center;
+        
+        .p-tag{
+            display:none
+        }
+
+        &>p{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        width:100%;
+        text-align:center;
+
+    }
+       
+    }
 `
 
 export const Close = styled.div`
         position:absolute;
         top:-10px;
-        right:-10px;
+        right:15px;
         cursor:pointer;
         border-radius:50%;
-        height:0;
+        height:10px;
+        width:10px;
+        
+        &>img{
+            height:40px;
+            width:40px;
+        }
+         
+    @media(max-width:${({theme})=> theme.mobile}){
+        display:none;
+        }
+        
+`
+
+export const Return = styled.img`
+    position:absolute;
+    top:0;
+    left:0;
+    width:70px;
+    height:70px;
+    cursor:pointer;
+    
 
 `
+

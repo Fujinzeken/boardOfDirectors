@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, DivContainer } from './styles/Container.styles'
 // import arrow from './images/Ellipse 52 (1).svg'
 import { Info, Name, Title, Wrapper } from './styles/Wrapper.styles'
 import infoIcon from './images/infoIcon.svg'
 import { Arrow } from './styles/Arrow.styles'
 import content from './content'
-import {Link} from 'react-router-dom'
+import Details from './Details'
+
 
 
 
 const BoardOfDirectors = () => {
+  const [showDetails, setShowDetails] = useState(false)
+
+  const handleClick = ()=>{
+    setShowDetails(true)
+  }
   return (
     <Container>
         <DivContainer>
@@ -24,11 +30,13 @@ const BoardOfDirectors = () => {
                 <Name>{item.name}</Name>
                 <Title>{item.title}</Title>
                 <Info>
-                <Link to='/details/:id'><Arrow src={infoIcon} alt='' /></Link>
+                <Arrow src={infoIcon} alt=''  onClick={handleClick}/>
                 </Info>
               </div>
             ))}
+           
         </Wrapper>
+        {showDetails &&<Details  setShowDetails={setShowDetails}/> }
     </Container>
   )
  
