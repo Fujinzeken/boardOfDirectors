@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
         padding-left:30px;
         align-items:center;
         position:relative;
+        margin-right:30px;
     }
 
     @media(max-width:${({theme})=> theme.tablet}){
@@ -31,7 +32,6 @@ export const Wrapper = styled.div`
 
     @media(max-width:${({theme})=> theme.mobile}){
        gap:50px;
-       padding-left:20px;
        align-items:center;
        justify-content:center;
       
